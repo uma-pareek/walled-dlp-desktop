@@ -1,0 +1,3 @@
+Quarterly Engineering Sync Notes
+Agenda: API latency benchmarks and release checklist.
+Classification: Public internal memo.

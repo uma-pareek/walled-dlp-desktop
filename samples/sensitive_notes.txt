@@ -1,0 +1,3 @@
+Confidential Architecture Review
+Marker: WALLED_SENSITIVE
+Do not upload to external public GenAI tools without confirmation.
