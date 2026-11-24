@@ -82,6 +82,6 @@ Standard Browser (Chrome / Edge / Firefox / Safari)
 
 To customize AI-generated response text color reliably without violating strict `Content-Security-Policy` headers (which often block inline `<style>` tags without nonces):
 
-1. When an HTML document (`text/html`) returns from `chatgpt.com` or `www.perplexity.ai`, `StyleInjector` inserts `<link rel="stylesheet" id="walled-dlp-response-style" href="/__walled_dlp__/response-style.css" />` before `</head>` and ensures `style-src` includes `'self'`.
+1. When an HTML document (`text/html`) returns from `chatgpt.com` or `www.perplexity.ai`, `StyleInjector` inserts `<link rel="stylesheet" id="walled-dlp-response-style" href="/__walled_dlp__/response-style.css" />` before `</head>`. The proxy leaves the site's Content Security Policy unchanged.
 2. When the browser requests `/__walled_dlp__/response-style.css` from the same origin, `DLPEngine` serves the generated CSS directly from memory.
 3. The CSS targets assistant response containers on ChatGPT (`[data-message-author-role="assistant"]`, `article[data-turn="assistant"]`) and AI answer containers on Perplexity (`.prose`, `[data-testid="answer"]`, `.markdown-content`), adapting automatically to light and dark themes (or applying any custom color selected in the desktop app).
